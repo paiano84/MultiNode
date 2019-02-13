@@ -276,10 +276,8 @@ let COUNTER=COUNTER+IP6COUNT
 	echo "alias ${ALIAS}_config=\"nano /root/.ltx_${ALIAS}/ltx.conf\""  >> .bashrc
 	echo "alias ${ALIAS}_getinfo=\"ltx-cli -datadir=/root/.ltx_$ALIAS getinfo\"" >> .bashrc
 	/root/bin/ltxd_${ALIAS}.sh
-	fi
-  done
-
-
+  fi
+  
 ## Final echos
 echo ""
 echo "Commands:"
@@ -290,4 +288,5 @@ echo "ALIAS_config"
 echo "ALIAS_getinfo"
 perl -i -ne 'print if ! $a{$_}++' /etc/monit/monitrc
 exec bash
+done
 exit
